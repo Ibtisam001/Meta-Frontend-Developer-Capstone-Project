@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, HashRouter, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Booking from "./Booking";
 import ConfirmedBooking from "./ConfirmedBooking";
@@ -47,6 +47,7 @@ const Main = () => {
         }
     }
     return (
+        <HashRouter>
         <main>
             <Routes>
                 <Route path="/" element={<Header/>}/>
@@ -54,6 +55,7 @@ const Main = () => {
                 <Route path='confirmed' element={<ConfirmedBooking/>}/>
             </Routes>
         </main>
+        </HashRouter>
     );
 };
 
